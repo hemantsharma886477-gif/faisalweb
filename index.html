@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faisal Web</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>H Faisal Web</title>
     <style>
         * {
             margin: 0;
@@ -66,7 +66,7 @@
 
         .hero {
             text-align: center;
-            padding: 3rem 0;
+            padding: 3rem 1rem;
             background: white;
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -82,9 +82,14 @@
         .hero p {
             font-size: 1.2rem;
             color: #4b5563;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        .about, .portfolio, .contact {
+        .about,
+        .portfolio,
+        .contact {
             margin: 3rem 0;
             padding: 2rem;
             background: white;
@@ -93,7 +98,9 @@
             animation: slideIn 1s ease-in-out;
         }
 
-        .about h2, .portfolio h2, .contact h2 {
+        .about h2,
+        .portfolio h2,
+        .contact h2 {
             font-size: 2rem;
             color: #1e3a8a;
             margin-bottom: 1rem;
@@ -200,20 +207,29 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Faisal Web</h1>
+        <h1>H Faisal Web</h1>
     </header>
 
     <nav>
@@ -227,49 +243,70 @@
 
     <div class="container">
         <section id="home" class="hero">
-            <h2>Welcome to Faisal Web</h2>
-            <p>Your one-stop destination for creative web solutions, showcasing innovative projects and a passion for technology.</p>
+            <h2>Welcome to H Faisal Web</h2>
+            <p>
+                Your one-stop destination for creative web solutions. I specialize in
+                web development, web design, UI & UX, and SEO — delivering innovative
+                projects that blend technology with creativity to help your business
+                grow and shine online.
+            </p>
         </section>
 
         <section id="about" class="about">
             <h2>About Me</h2>
-            <p>Hi, I'm Faisal, a web developer with a knack for creating stunning and functional websites. With expertise in HTML, CSS, and JavaScript, I bring ideas to life through clean code and modern design. My mission is to deliver user-friendly and visually appealing web experiences.</p>
+            <p>
+                Hi, I'm Faisal, a web developer with a knack for creating stunning and
+                functional websites. With expertise in HTML, CSS, and JavaScript, I
+                bring ideas to life through clean code and modern design. My mission
+                is to deliver user-friendly and visually appealing web experiences.
+            </p>
         </section>
 
         <section id="portfolio" class="portfolio">
             <h2>My Portfolio</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+1" alt="Project 1">
-                    <h3>web designer</h3>
+                    <img src="https://via.placeholder.com/300x150?text=Project+1" alt="Project 1" />
+                    <h3>Project 1</h3>
                     <p>A dynamic e-commerce website with seamless user experience.</p>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+2" alt="Project 2">
-                    <h3>ui&ux</h3>
+                    <img src="https://via.placeholder.com/300x150?text=Project+2" alt="Project 2" />
+                    <h3>Project 2</h3>
                     <p>A portfolio website showcasing creative designs.</p>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+3" alt="Project 3">
-                    <h3>seo</h3>
+                    <img src="https://via.placeholder.com/300x150?text=Project+3" alt="Project 3" />
+                    <h3>Project 3</h3>
                     <p>An interactive web app with real-time features.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ✅ Updated Contact Form -->
         <section id="contact" class="contact">
             <h2>Contact Me</h2>
             <p>Got a project in mind? Let's connect!</p>
             <form onsubmit="submitForm(event)">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required />
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                    />
                 </div>
                 <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Your Message"
+                        rows="5"
+                        required
+                    ></textarea>
                 </div>
                 <button type="submit">Send Message</button>
             </form>
@@ -282,7 +319,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Faisal Web. All rights reserved.</p>
+        <p>&copy; 2025 H Faisal Web. All rights reserved.</p>
     </footer>
 
     <script>
@@ -293,7 +330,7 @@
         }
 
         function submitForm(event) {
-            event.preventDefault(); // Prevents page reload
+            event.preventDefault(); // Prevent form submission reload
 
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
@@ -309,6 +346,5 @@
             }
         }
     </script>
-
 </body>
 </html>
