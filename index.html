@@ -2,361 +2,170 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>H Faisal Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agency No1 Inspired Layout</title>
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
-
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
 
+        /* Header */
         header {
-            background: #1e3a8a;
+            background-color: #ff6600;
             color: white;
-            padding: 1.5rem 2rem;
+            padding: 1rem 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
         }
-
-        /* Logo styles */
-        header img.logo {
-            height: 50px;
-            width: auto;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
         header h1 {
-            font-size: 3rem;
-            animation: fadeIn 1.5s ease-in-out;
+            font-size: 2.5rem;
         }
 
+        /* Navigation */
         nav {
-            background: #2563eb;
-            padding: 1rem;
+            background-color: #333;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            padding: 1rem 0;
         }
-
-        nav a {
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             font-size: 1.1rem;
-            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff6600;
         }
 
-        nav a:hover {
-            color: #facc15;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
+        /* Hero Section */
         .hero {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: white;
             text-align: center;
-            padding: 3rem 1rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
+            padding: 5rem 1rem;
         }
-
         .hero h2 {
-            font-size: 2.5rem;
-            color: #1e3a8a;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
-
         .hero p {
             font-size: 1.2rem;
-            color: #4b5563;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+        .hero button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hero button:hover {
+            background-color: #e55b00;
         }
 
-        .about,
-        .portfolio,
-        .contact {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease-in-out;
-        }
-
-        .about h2,
-        .portfolio h2,
-        .contact h2 {
-            font-size: 2rem;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .portfolio-item {
-            background: #f1f5f9;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        /* Updated Contact Form */
-        .contact form {
+        /* Services Section */
+        .services {
             display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            max-width: 500px;
-            margin: 2rem auto 0;
+            justify-content: space-around;
+            padding: 3rem 1rem;
+            background-color: white;
         }
-
-        .form-group {
-            width: 100%;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            padding: 0.9rem;
-            font-size: 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 5px;
-            background-color: #f9fafb;
-        }
-
-        .contact textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .contact button {
-            width: 100%;
-            max-width: 200px;
-            padding: 0.9rem;
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact button:hover {
-            background: #1e3a8a;
-        }
-
-        .click-counter {
+        .service {
             text-align: center;
-            margin: 2rem 0;
+            width: 30%;
+        }
+        .service img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+        .service h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .service p {
+            font-size: 1rem;
+            color: #666;
         }
 
-        .click-counter button {
-            padding: 0.8rem 1.5rem;
-            background: #facc15;
-            color: #1e3a8a;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .click-counter button:hover {
-            background: #eab308;
-        }
-
+        /* Footer */
         footer {
-            background: #1e3a8a;
+            background-color: #333;
             color: white;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 2rem 1rem;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        footer p {
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <img class="logo" src="https://via.placeholder.com/80x50?text=Logo" alt="Faisal Web Logo" />
-        <h1>Faisal Web</h1>
+        <h1>Agency No1</h1>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <section id="home" class="hero">
-            <h2>Welcome to H Faisal Web</h2>
-            <p>
-                Your one-stop destination for creative web solutions. I specialize in
-                web development, web design, UI & UX, and SEO — delivering innovative
-                projects that blend technology with creativity to help your business
-                grow and shine online.
-            </p>
-        </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Transforming Your Business</h2>
+        <p>We provide innovative digital solutions to help your business grow online.</p>
+        <button>Get Started</button>
+    </section>
 
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>
-                Hi, I'm Faisal, a web developer with a knack for creating stunning and
-                functional websites. With expertise in HTML, CSS, and JavaScript, I
-                bring ideas to life through clean code and modern design. My mission
-                is to deliver user-friendly and visually appealing web experiences.
-            </p>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <h2>My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+1" alt="Project 1" />
-                    <h3>Project 1</h3>
-                    <p>A dynamic e-commerce website with seamless user experience.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+2" alt="Project 2" />
-                    <h3>Project 2</h3>
-                    <p>A portfolio website showcasing creative designs.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+3" alt="Project 3" />
-                    <h3>Project 3</h3>
-                    <p>An interactive web app with real-time features.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Contact Me</h2>
-            <p>Got a project in mind? Let's connect!</p>
-            <form onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Your Email"
-                        required
-                    />
-                </div>
-                <div class="form-group">
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Your Message"
-                        rows="5"
-                        required
-                    ></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-        <div class="click-counter">
-            <p>Button clicks: <span id="counter">0</span></p>
-            <button onclick="incrementCounter()">Click Me!</button>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="service">
+            <img src="https://via.placeholder.com/100" alt="Service 1" />
+            <h3>Web Design</h3>
+            <p>Crafting visually appealing and user-friendly websites.</p>
         </div>
-    </div>
+        <div class="service">
+            <img src="https://via.placeholder.com/100" alt="Service 2" />
+            <h3>SEO Optimization</h3>
+            <p>Enhancing your website's visibility on search engines.</p>
+        </div>
+        <div class="service">
+            <img src="https://via.placeholder.com/100" alt="Service 3" />
+            <h3>Digital Marketing</h3>
+            <p>Implementing strategies to boost your online presence.</p>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Faisal Web. All rights reserved.</p>
+        <p>&copy; 2025 Agency No1. All rights reserved.</p>
     </footer>
 
-    <script>
-        let counter = 0;
-        function incrementCounter() {
-            counter++;
-            document.getElementById('counter').textContent = counter;
-        }
-
-        function submitForm(event) {
-            event.preventDefault(); // Prevent form submission reload
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (name && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent.`);
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('message').value = '';
-            } else {
-                alert('Please fill out all fields.');
-            }
-        }
-    </script>
 </body>
 </html>
