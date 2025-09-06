@@ -270,20 +270,13 @@
 
         function submitForm(event) {
     event.preventDefault(); // Prevents page reload
+            <form onsubmit="submitForm(event)">
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (name && email && message) {
-        alert(`Thank you, ${name}! Your message has been sent.`);
-
-        // Reset form fields
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
-    } else {
-        alert('Please fill out all fields.');
         
     </script>
 </body>
