@@ -21,9 +21,20 @@
         header {
             background: #1e3a8a;
             color: white;
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Logo styles */
+        header img.logo {
+            height: 50px;
+            width: auto;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         header h1 {
@@ -229,6 +240,7 @@
 </head>
 <body>
     <header>
+        <img class="logo" src="https://via.placeholder.com/80x50?text=Logo" alt="Faisal Web Logo" />
         <h1>Faisal Web</h1>
     </header>
 
