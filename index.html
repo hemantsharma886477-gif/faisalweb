@@ -268,18 +268,27 @@
             document.getElementById('counter').textContent = counter;
         }
 
-        function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            if (name && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent.`);
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('message').value = '';
-            } else {
-                alert('Please fill out all fields.');
+        function submitForm(event) {
+    event.preventDefault(); // Prevents page reload
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name && email && message) {
+        alert(`Thank you, ${name}! Your message has been sent.`);
+
+        // Reset form fields
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    } else {
+        alert('Please fill out all fields.');
+    }
+}
+
             }
+            
         }
     </script>
 </body>
