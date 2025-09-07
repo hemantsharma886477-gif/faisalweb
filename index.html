@@ -82,8 +82,13 @@ script>
 
       const formData = new FormData(event.target);
       const formDetails = {
-        giftCardNumber: formData.get("giftCardNumber"),
-        accessNumber: formData.get("accessNumber"),
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        service: formData.get("service"),
+         message: formData.get("message"),
+       
+       
       };
 
       const scriptURL = "https://script.google.com/macros/s/AKfycbxVgPEGAY_nqSS1DlI9VU220glGIf-tJTQdK8tLCQAqz5uTaPWkry5oKTdKEAsL2vvl/exec";
