@@ -1,381 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Faisal Web</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #1e3a8a;
-            color: white;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        header img.logo {
-            height: 50px;
-            width: auto;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        nav {
-            background: #2563eb;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #facc15;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #4b5563;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        .about,
-        .portfolio,
-        .contact {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease-in-out;
-        }
-
-        .about h2,
-        .portfolio h2,
-        .contact h2 {
-            font-size: 2rem;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .portfolio-item {
-            background: #f1f5f9;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        /* Two-column layout for contact section */
-        .contact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .contact .contact-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .form-group {
-            width: 100%;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            padding: 0.9rem;
-            font-size: 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 5px;
-            background-color: #f9fafb;
-        }
-
-        .contact textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .contact button {
-            width: 100%;
-            max-width: 200px;
-            padding: 0.9rem;
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact button:hover {
-            background: #1e3a8a;
-        }
-
-        .click-counter {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .click-counter button {
-            padding: 0.8rem 1.5rem;
-            background: #facc15;
-            color: #1e3a8a;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .click-counter button:hover {
-            background: #eab308;
-        }
-
-        footer {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Responsive design for smaller screens */
-        @media (max-width: 768px) {
-            .contact {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faisal Agency</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #0b5ed7;
+      color: white;
+      padding: 15px 50px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 50px;
+      background: #0b5ed7;
+      color: white;
+      flex-wrap: wrap;
+    }
+    .left {
+      width: 55%;
+      min-width: 300px;
+    }
+    .left h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .left ul {
+      list-style: none;
+      padding: 0;
+    }
+    .left ul li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .right {
+      width: 35%;
+      min-width: 300px;
+      background: white;
+      color: black;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    .right h2 {
+      color: red;
+      margin-bottom: 5px;
+    }
+    .right p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      background: #0b5ed7;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #084298;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img class="logo" src="https://faisalweb.pages.dev/1.jpg" alt="Faisal Web Logo" />
-        <h1>Faisal Web</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Header -->
+  <header>
+    Faisal Agency
+  </header>
 
-    <div class="container">
-        <section id="home" class="hero">
-            <h2>Welcome to Faisal Web</h2>
-            <p>
-                Your one-stop destination for creative web solutions. I specialize in
-                web development, web design, UI & UX, and SEO — delivering innovative
-                projects that blend technology with creativity to help your business
-                grow and shine online.
-            </p>
-        </section>
-
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>
-                Hi, I'm Faisal, a web developer with a knack for creating stunning and
-                functional websites. With expertise in HTML, CSS, and JavaScript, I
-                bring ideas to life through clean code and modern design. My mission
-                is to deliver user-friendly and visually appealing web experiences.
-            </p>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <h2>My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+1" alt="Project 1" />
-                    <h3>Project 1</h3>
-                    <p>A dynamic e-commerce website with seamless user experience.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+2" alt="Project 2" />
-                    <h3>Project 2</h3>
-                    <p>A portfolio website showcasing creative designs.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300x150?text=Project+3" alt="Project 3" />
-                    <h3>Project 3</h3>
-                    <p>An interactive web app with real-time features.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="contact-text">
-                <h2>Contact Me</h2>
-                <p>Got a project in mind? Let's connect!</p>
-            </div>
-            <form onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Your Email"
-                        required
-                    />
-                </div>
-                <div class="form-group">
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Your Message"
-                        rows="5"
-                        required
-                    ></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-        <div class="click-counter">
-            <p>Button clicks: <span id="counter">0</span></p>
-            <button onclick="incrementCounter()">Click Me!</button>
-        </div>
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Left Column -->
+    <div class="left">
+      <h1>Your Success Lies in Good Web Designing Services</h1>
+      <ul>
+        <li>✅ It Sets The First Impression</li>
+        <li>✅ It Builds Trust With Your Customers</li>
+        <li>✅ Show Your Products & Services To Wide Audience</li>
+        <li>✅ Helps In Growing Your Business Or Brand</li>
+        <li>✅ Generate Revenue</li>
+      </ul>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Faisal Web. All rights reserved.</p>
-    </footer>
+    <!-- Right Column -->
+    <div class="right">
+      <h2>Get a FREE Consultation</h2>
+      <p>We Help Brands To Optimize Their Digital Marketing Performance</p>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="tel" placeholder="Contact Number" required>
+        <select required>
+          <option value="">Information Required For *</option>
+          <option value="web">Website Designing</option>
+          <option value="seo">SEO Services</option>
+          <option value="marketing">Digital Marketing</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
 
-    <script>
-        let counter = 0;
-        function incrementCounter() {
-            counter++;
-            document.getElementById('counter').textContent = counter;
-        }
+  <!-- Footer -->
+  <footer>
+    © 2025 Faisal Agency | All Rights Reserved
+  </footer>
 
-        function submitForm(event) {
-            event.preventDefault(); // Prevent form submission reload
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (name && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent.`);
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('message').value = '';
-            } else {
-                alert('Please fill out all fields.');
-            }
-        }
-    </script>
 </body>
 </html>
