@@ -3,376 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faisal Agency</title>
+  <title>Professional Web Design Services</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-    }
-    header {
-      background: #0b5ed7;
-      color: white;
-      padding: 15px 50px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(11,94,215,0.8), rgba(11,94,215,0.8)), 
-                  url("https://source.unsplash.com/1600x900/?technology,office") no-repeat center center/cover;
-      color: white;
-      padding: 70px 50px;
-    }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      max-width: 1200px;
-      margin: auto;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    /* Left Column */
-    .left {
-      flex: 1;
-      min-width: 300px;
-    }
-    .left h1 {
-      font-size: 40px;
-      margin-bottom: 25px;
-      line-height: 1.3;
-    }
-    .left ul {
-      list-style: none;
-      padding: 0;
-    }
-    .left ul li {
-      margin: 12px 0;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-
-    }
-    .left ul li::before {
-      content: "✔️";
-      margin-right: 10px;
-      font-size: 20px;
-    }
-    /* Right Column */
-    .right {
-      flex: 1;
-      min-width: 320px;
-      background: white;
-      color: black;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
-    }
-    .right h2 {
-      color: red;
-      margin-bottom: 5px;
-      font-size: 22px;
-    }
-    .right p {
-      font-size: 14px;
-      margin-bottom: 20px;
-      color: #444;
-    }
-    input, select, textarea, button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-    textarea {
-      resize: none;
-    }
-    button {
-      background: #0b5ed7;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #084298;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: white;
-      font-size: 14px;
-    }
-    /* Responsive */
-    @media(max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .left h1 {
-        font-size: 28px;
-      }
-      .right {
-        margin-top: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    Faisal Agency
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <!-- Left Column -->
-      <div class="left">
-        <h1>Your Success Lies in Good Web Designing Services</h1>
-        <ul>
-          <li>It Sets The First Impression</li>
-          <li>It Builds Trust With Your Customers</li>
-          <li>Show Your Products & Services To Wide Audience</li>
-          <li>Helps In Growing Your Business Or Brand</li>
-          <li>Generate Revenue</li>
-        </ul>
-      </div>
-
-      <!-- Right Column -->
-      <div class="right">
-        <h2>Get a FREE Consultation</h2>
-        <p>We Help Brands To Optimize Their Digital Marketing Performance</p>
-        <form>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="E-mail" required>
-          <input type="tel" placeholder="Contact Number" required>
-          <select required>
-            <option value="">Information Required For *</option>
-            <option value="web">Website Designing</option>
-            <option value="seo">SEO Services</option>
-            <option value="marketing">Digital Marketing</option>
-            <option value="other">Other</option>
-          </select>
-          <textarea rows="4" placeholder="Message"></textarea>
-          <button type="submit">SUBMIT</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 Faisal Agency | All Rights Reserved
-  </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faisal Agency</title>
-  <style>
-    * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
+
     section {
       padding: 60px 20px;
-      background: #f0f8ff;
+      background: #fff;
     }
+
     .section-title {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
+
     .section-title h2 {
-      font-size: 32px;
+      font-size: 30px;
       font-weight: bold;
       color: #111;
     }
+
     .section-title p {
       font-size: 16px;
+      color: #555;
       max-width: 800px;
       margin: 15px auto;
-      color: #444;
     }
-    .cards {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      flex-wrap: wrap;
-      margin-top: 40px;
+      max-width: 1100px;
+      margin: auto;
     }
-    .card {
-      flex: 1;
-      min-width: 280px;
-      max-width: 350px;
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px 20px;
-      text-align: center;
+
+    .service-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 20px;
+      background: #f8faff;
+      border-radius: 10px;
       border: 1px solid #ddd;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      border-color: #0b5ed7;
+
+    .service-box:hover {
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
     }
-    .card-icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-      display: inline-block;
-      width: 70px;
-      height: 70px;
-      line-height: 70px;
-      border-radius: 50%;
-      background: #e8f0fe;
-      color: #0b5ed7;
+
+    .icon {
+      font-size: 35px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      flex-shrink: 0;
     }
-    .card h3 {
-      font-size: 20px;
+
+    .service-box h3 {
+      font-size: 18px;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       color: #111;
     }
-    .card p {
-      font-size: 15px;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: white;
+
+    .service-box p {
       font-size: 14px;
-    }
-    /* Responsive */
-    @media(max-width: 900px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
+      color: #555;
+      line-height: 1.5;
     }
   </style>
-  <!-- FontAwesome Icons -->
+
+  <!-- FontAwesome for icons -->
   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Services Section -->
   <section>
     <div class="section-title">
-      <h2>BEST WEBSITE DESIGNING COMPANY IN DELHI</h2>
-      <p>
-        A successful website is built with key ingredients that lead to measurable rewards, whether that's increased leads, sales, or page views. 
-        As one of the <b>top web design companies in Delhi</b>, we are committed to excellence. Every project we undertake goes through thorough testing and optimization, 
-        ensuring high performance and usability.
-      </p>
+      <h2>Professional Web Design Services in Delhi</h2>
+      <p>As one of the <b>leading website designers in Delhi</b>, we have earned the trust of many satisfied clients from all corners thanks to our specialized services.</p>
     </div>
 
-    <div class="cards">
-      <!-- Card 1 -->
-      <div class="card">
-        <div class="card-icon" style="background:#e0f0ff; color:#0b5ed7;">
-          <i class="fas fa-cogs"></i>
+    <div class="services">
+      <!-- Service 1 -->
+      <div class="service-box">
+        <div class="icon" style="background:#e0ffe0; color:#2a9d8f;">
+          <i class="fas fa-store"></i>
         </div>
-        <h3>Streamline Process</h3>
-        <p>From design to execution and beyond, we remain committed to this principle. Our team takes pleasure in everything we produce.</p>
+        <div>
+          <h3>Shopify Store Creation</h3>
+          <p>We create professional, user-friendly Shopify stores optimized for sales, branding, and customer experience.</p>
+        </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="card-icon" style="background:#ffe0e0; color:#e63946;">
+      <!-- Service 2 -->
+      <div class="service-box">
+        <div class="icon" style="background:#e0f0ff; color:#0b5ed7;">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div>
+          <h3>Landing Page Design</h3>
+          <p>We design eye-catching landing pages to attract visitors and turn them into customers with clear, engaging content.</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-box">
+        <div class="icon" style="background:#ffe0e0; color:#e63946;">
           <i class="fas fa-code"></i>
         </div>
-        <h3>Talented Designers & Expert Developers</h3>
-        <p>With years of experience, they specialize in developing pixel-perfect, clean, and SEO-optimized websites that are visually appealing.</p>
+        <div>
+          <h3>Laravel Website Development</h3>
+          <p>We build custom, scalable, and secure Laravel web applications tailored to your business requirements and goals.</p>
+        </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="card-icon" style="background:#e0ffe0; color:#2a9d8f;">
-          <i class="fas fa-laptop-code"></i>
+      <!-- Service 4 -->
+      <div class="service-box">
+        <div class="icon" style="background:#e0f7fa; color:#00796b;">
+          <i class="fas fa-tools"></i>
         </div>
-        <h3>Extensive Experience</h3>
-        <p>In web design, we have developed one of the most comprehensive and intricate strategies to date.</p>
+        <div>
+          <h3>Website Maintenance</h3>
+          <p>We provide regular updates, backups, and fixes to ensure your website runs smoothly and securely.</p>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-box">
+        <div class="icon" style="background:#fff3e0; color:#f57c00;">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div>
+          <h3>Ecommerce Web Designing</h3>
+          <p>We design easy-to-use online stores that help you sell products effectively and grow your business.</p>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-box">
+        <div class="icon" style="background:#ede7f6; color:#5e35b1;">
+          <i class="fas fa-server"></i>
+        </div>
+        <div>
+          <h3>Hosting Services</h3>
+          <p>We offer reliable website hosting to keep your site fast, secure, and always online.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Faisal Agency | All Rights Reserved
-  </footer>
-
 </body>
 </html>
-<form id="contactForm">
-  <input type="text" name="name" placeholder="Name" required>
-  <input type="email" name="email" placeholder="E-mail" required>
-  <input type="tel" name="phone" placeholder="Contact Number" required>
-  <select name="service" required>
-    <option value="">Information Required For *</option>
-    <option value="web">Website Designing</option>
-    <option value="seo">SEO Services</option>
-    <option value="marketing">Digital Marketing</option>
-  </select>
-  <textarea name="message" placeholder="Message"></textarea>
-  <button type="submit">SUBMIT</button>
-</form>
-
-<script>
-  // 🔗 यहाँ अपना Script URL paste करो
-  const scriptURL = "https://script.google.com/macros/s/AKfycbyLrkaQvO6d0TOQDyhgp4GBlupdgEzQPxFAt9jEd18mGtYEvj9jEp8UbJAHyLviKwacSg/exec";
-
-  document.getElementById("contactForm").addEventListener("submit", e => {
-    e.preventDefault();
-
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-      service: e.target.service.value,
-      message: e.target.message.value
-    };
-
-    fetch(scriptURL, {
-      method: "POST",
-      body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(data => {
-      alert("✅ Form submitted successfully!");
-      e.target.reset();
-    })
-    .catch(err => {
-      console.error("Error!", err.message);
-      alert("❌ Something went wrong!");
-    });
-  });
-</script>
-
-
