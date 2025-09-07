@@ -76,39 +76,71 @@
   </style>
 </head>
 <body>
-script>
-    document.getElementById("Sheet1").addEventListener("submit", function (event) {
-      event.preventDefault();
 
-      const formData = new FormData(event.target);
-      const formDetails = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        phone: formData.get("phone"),
-        service: formData.get("service"),
-         message: formData.get("message"),
-       
-       
+  <div class="form-container">
+    <h2>Get in Touch</h2>
+    <p>Fill out the form below and we’ll get back to you soon.</p>
+
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Contact Number" required>
+      
+      <select name="service" required>
+        <option value="">Select Service *</option>
+        <option value="Website Designing">Website Designing</option>
+        <option value="SEO Services">SEO Services</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+      <button type="submit">SUBMIT</button>
+    </form>
+
+    <div class="success">✅ Form submitted successfully!</div>
+    <div class="error">❌ Something went wrong. Please try again.</div>
+  </div>
+
+  <script>
+    // 👉 अपना Google Apps Script URL यहाँ डालें
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyLrkaQvO6d0TOQDyhgp4GBlupdgEzQPxFAt9jEd18mGtYEvj9jEp8UbJAHyLviKwacSg/exec";
+
+    const form = document.getElementById("contactForm");
+    const successMsg = document.querySelector(".success");
+    const errorMsg = document.querySelector(".error");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        service: form.service.value,
+        message: form.message.value
       };
-
-      const scriptURL = "https://script.google.com/macros/s/AKfycbxVgPEGAY_nqSS1DlI9VU220glGIf-tJTQdK8tLCQAqz5uTaPWkry5oKTdKEAsL2vvl/exec";
 
       fetch(scriptURL, {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formDetails),
+        body: JSON.stringify(formData)
       })
-        .then(() => {
-          // Show error message
-          document.getElementById("errorMsg").style.display = "block";
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          alert("⚠️ Something went wrong! Try again.");
-        });
+      .then(res => res.json())
+      .then(data => {
+        if(data.status === "success"){
+          successMsg.style.display = "block";
+          errorMsg.style.display = "none";
+          form.reset();
+        } else {
+          throw new Error("Failed");
+        }
+      })
+      .catch(err => {
+        errorMsg.style.display = "block";
+        successMsg.style.display = "none";
+      });
     });
   </script>
- 
+
+</body>
+</html>
