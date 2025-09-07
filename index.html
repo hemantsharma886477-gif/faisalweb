@@ -56,6 +56,7 @@
       font-size: 18px;
       display: flex;
       align-items: center;
+
     }
     .left ul li::before {
       content: "✔️";
@@ -329,4 +330,49 @@
 
 </body>
 </html>
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="E-mail" required>
+  <input type="tel" name="phone" placeholder="Contact Number" required>
+  <select name="service" required>
+    <option value="">Information Required For *</option>
+    <option value="web">Website Designing</option>
+    <option value="seo">SEO Services</option>
+    <option value="marketing">Digital Marketing</option>
+  </select>
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">SUBMIT</button>
+</form>
+
+<script>
+  // 🔗 यहाँ अपना Script URL paste करो
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyLrkaQvO6d0TOQDyhgp4GBlupdgEzQPxFAt9jEd18mGtYEvj9jEp8UbJAHyLviKwacSg/exec";
+
+  document.getElementById("contactForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      service: e.target.service.value,
+      message: e.target.message.value
+    };
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert("✅ Form submitted successfully!");
+      e.target.reset();
+    })
+    .catch(err => {
+      console.error("Error!", err.message);
+      alert("❌ Something went wrong!");
+    });
+  });
+</script>
+
 
