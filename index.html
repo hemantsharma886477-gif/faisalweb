@@ -104,7 +104,7 @@
 
   <script>
     // 👉 अपना Google Apps Script URL यहाँ डालें
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyLrkaQvO6d0TOQDyhgp4GBlupdgEzQPxFAt9jEd18mGtYEvj9jEp8UbJAHyLviKwacSg/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxVgPEGAY_nqSS1DlI9VU220glGIf-tJTQdK8tLCQAqz5uTaPWkry5oKTdKEAsL2vvl/exec";
 
     const form = document.getElementById("contactForm");
     const successMsg = document.querySelector(".success");
@@ -144,3 +144,23 @@
 
 </body>
 </html>
+
+function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Sheet1");  // 👈 यहाँ आपकी sheet का नाम (Sheet1)
+
+  var data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    data.name,
+    data.email,
+    data.phone,
+    data.service,
+    data.message,
+    new Date()
+  ]);
+
+  return ContentService.createTextOutput(
+    JSON.stringify({ "status": "success" })
+  ).setMimeType(ContentService.MimeType.JSON);
+}
