@@ -102,8 +102,45 @@
     <div class="error">❌ Something went wrong. Please try again.</div>
   </div>
 
+  <script>
+    // 👉 अपना Google Apps Script URL यहाँ डालें
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxVgPEGAY_nqSS1DlI9VU220glGIf-tJTQdK8tLCQAqz5uTaPWkry5oKTdKEAsL2vvl/exec";
 
+    const form = document.getElementById("contactForm");
+    const successMsg = document.querySelector(".success");
+    const errorMsg = document.querySelector(".error");
 
-   
+    form.addEventListener("submit", e => {
+      e.preventDefault();
 
- 
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        service: form.service.value,
+        message: form.message.value
+      };
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.status === "success"){
+          successMsg.style.display = "block";
+          errorMsg.style.display = "none";
+          form.reset();
+        } else {
+          throw new Error("Failed");
+        }
+      })
+      .catch(err => {
+        errorMsg.style.display = "block";
+        successMsg.style.display = "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
