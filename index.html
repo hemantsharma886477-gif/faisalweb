@@ -144,3 +144,39 @@
 
 </body>
 </html>
+
+script>
+    document.getElementById("Sheet1").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const formDetails = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        service: formData.get("service"),
+         message: formData.get("message"),
+       
+       
+      };
+
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxVgPEGAY_nqSS1DlI9VU220glGIf-tJTQdK8tLCQAqz5uTaPWkry5oKTdKEAsL2vvl/exec";
+
+      fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDetails),
+      })
+        .then(() => {
+          // Show error message
+          document.getElementById("errorMsg").style.display = "block";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("⚠️ Something went wrong! Try again.");
+        });
+    });
+  </script>
