@@ -145,22 +145,5 @@
 </body>
 </html>
 
-function doPost(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Sheet1");  // 👈 यहाँ आपकी sheet का नाम (Sheet1)
 
-  var data = JSON.parse(e.postData.contents);
-
-  sheet.appendRow([
-    data.name,
-    data.email,
-    data.phone,
-    data.service,
-    data.message,
-    new Date()
-  ]);
-
-  return ContentService.createTextOutput(
-    JSON.stringify({ "status": "success" })
-  ).setMimeType(ContentService.MimeType.JSON);
-}
+ 
